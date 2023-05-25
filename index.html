@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+     <div class="container">
+        <div class="btr2" id="volv">
+          <div class="buttons">
+            <a href="#uno" class="text-center head">Punto 1</a>
+            <a href="#dos" class="text-center head">Punto 2</a>
+            <a href="#tres" class="text-center head">Punto 3</a>
+            <a href="#cuatro" class="text-center head">Punto 4</a>
+            <a href="#cinco" class="text-center head">Punto 5</a>
+            <a href="#seis" class="text-center head">Punto 6</a>
+            <a href="#siete" class="text-center head">Punto 7</a>
+            <a href="#ocho" class="text-center head">Punto 8</a>
+            <a href="#nueve" class="text-center head">Punto 9</a>
+            <a href="#diez" class="text-center head">Punto 10</a>
+            <a href="#once" class="text-center head">Punto 11</a>
+            <a href="#doce" class="text-center head">Punto 12</a>
+            <a href="#trece" class="text-center head">Punto 13</a>
+            <a href="#catorce" class="text-center head">Punto 14</a>
+            <a href="#quince" class="text-center head">Punto 15</a>
+          </div>
+        </div>
+        <button class="scroll-btn left-btn">←</button>
+        <button class="scroll-btn right-btn">→</button>
+        <div class="card" >
+            <div class="card-body" id="uno">
+                <h2>Ejercicio #1</h2>
+                <p>Listado de todos los usuarios registrados en la base de datos </p>
+                <ul>
+                    <li>Nombres</li>
+                    <li>Apellidos</li>
+                    <li>Correo</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT names, lastname, email FROM `users`;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p1.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="dos">
+                <h2>Ejercicio #2</h2>
+                <p>Listado de departamentos registrados en la base de datos</p>
+                <ul>
+                    <li>Nombre del departamento</li>
+                    <li>Nombre del pais</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT departments.name as Departamento, countries.name as Pais FROM `departments` INNER JOIN countries WHERE departments.countries_id = countries.id;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p2.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="tres">
+                <h2>Ejercicio #3</h2>
+                <p>Listado de escuelas por un país determinado</p>
+                <ul>
+                    <li>Nombre de la escuela </li>
+                    <li>Nombre del país</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT schools.name as Escuelas, countries.name as Pais FROM `schools` INNER JOIN countries WHERE schools.countries_id = countries.id and countries.name = 'Estados Unidos';
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p3.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="cuatro">
+                <h2>Ejercicio #4</h2>
+                <p>Listado de usuarios ordenados (de mayor edad a menor edad)</p>
+                <ul>
+                    <li>Nombres</li>
+                    <li>Apellidos</li>
+                    <li>Fecha de nacimiento</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                </code>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="cinco">
+                <h2>Ejercicio #5</h2>
+                <p>En que departamento hay más usuarios registrados </p>
+                <ul>
+                    <li>departamento</li>
+                    <li>Id</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT departments.name, departments.id, COUNT(departments_id) as numero_de_usuarios FROM  `users` INNER JOIN departments WHERE users.departments_id = departments.id GROUP BY departments_id ORDER BY numero_de_usuarios DESC LIMIT 1;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p5.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="seis">
+                <h2>Ejercicio #6</h2>
+                <p>Cual es el país con más usuarios registrados</p>
+                <ul>
+                    <li>País</li>
+                    <li>Id</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT countries.name, countries.id, COUNT(countries_id) as numero_de_usuarios FROM `users` INNER JOIN departments INNER JOIN countries WHERE users.departments_id = departments.id and departments.countries_id 	= countries.id GROUP BY countries_id ORDER BY numero_de_usuarios DESC LIMIT 1;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p6.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="siete">
+                <h2>Ejercicio #7</h2>
+                <p>Listar solo 3 departamentos</p>
+                <ul>
+                    <li>Nombre departamento</li>
+                    <li>Id</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT name, id FROM `departments` ORDER BY rand() DESC LIMIT 3;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p7.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="ocho">
+                <h2>Ejercicio #8</h2>
+                <p>Listar la información de un usuario determinado</p>
+                <ul>
+                    <li>Nombres</li>
+                    <li>Apellidos</li>
+                    <li>Correo</li>
+                    <li>Nombre del colegio</li>
+                    <li>Nombre del departamento</li>
+                    <li>Nombre del país</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT users.names, users.lastname, users.email, schools.name as escuela, departments.name as departamento, countries.name as pais FROM `users` INNER JOIN schools INNER JOIN departments INNER JOIN countries WHERE users.school_id = schools.id and users.departments_id = departments.id and departments.countries_id = countries.id ORDER BY rand() LIMIT 1;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p8.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="nueve">
+                <h2>Ejercicio #9</h2>
+                <p>Listado de usuarios con un nombre determinado “and” </p>
+                <ul>
+                    <li>Nombres</li>
+                    <li>Apellidos</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT names, lastname FROM `users` WHERE names = 'Adriana';
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p9.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="diez">
+                <h2>Ejercicio #10</h2>
+                <p>Cuantos usuarios viven en un departamento determinado</p>
+                <ul>
+                    <li>Cantidad de usuarios "numero"</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT departments.name, COUNT(departments_id) as numero_usuarios FROM `users` INNER JOIN departments WHERE users.departments_id = departments.id GROUP BY departments_id ORDER BY rand() LIMIT 1;
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p10.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="once">
+                <h2>Ejercicio #11</h2>
+                <p>Listado de usuarios que tengan más de 20 años</p>
+                <ul>
+                    <li>Nombres</li>
+                    <li>Apellidos</li>
+                    <li>Fecha nacimiento</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                </code>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="doce">
+                <h2>Ejercicio #12</h2>
+                <p>Listado de usuarios que tengan entre 20 y 60 años</p>
+                <ul>
+                    <li>Nombres</li>
+                    <li>Apellidos</li>
+                    <li>Nombre capital</li>
+                </ul>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                </code>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="trece">
+                <h2>Ejercicio #13</h2>
+                <p>Listado de colegios que tengan el numero “7” en su número de teléfono</p>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT * FROM `schools` WHERE phone LIKE '%7%';
+                </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p13.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="catorce">
+                <h2>Ejercicio #14</h2>
+                <p>Listado de usuarios que no estén asociados a ningún departamento</p>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                </code>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" id="quince">
+                <h2>Ejercicio #15</h2>
+                <p>Listado de usuarios que no estén asociados a ningún colegio.</p>
+                <div class="ver">Ver código</div>
+                <code class="disp">
+                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                </code>
+            </div>
+        </div>
+      </div>
+      <a href="#volv" class="volver">Volver</a>
+      <script src="JS/app.js"></script>
+    </body>
+</html>
