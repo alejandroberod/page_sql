@@ -6,10 +6,10 @@ code{
     color: #64b5f6;
 }
 .container {
+    position: relative;
     width: 62.5rem;
     overflow: hidden;
     background-color: #28282e;
-    position: relative;
 }
 
 .btr2 {
