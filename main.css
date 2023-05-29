@@ -6,7 +6,6 @@ code{
     color: #64b5f6;
 }
 .container {
-    position: relative;
     width: 62.5rem;
     overflow: hidden;
     background-color: #28282e;
@@ -17,12 +16,14 @@ code{
     white-space: nowrap;
 }
 
-.card-body {
+.card {
     transition: 0.5s;
 }
 
-.card-body:hover {
+.card:hover {
     box-shadow: 0 0 15px #ba68c8;
+    border-radius: 0.25rem;
+    transform: translateY(-5px);
 }
 
 .volver {
@@ -33,19 +34,37 @@ code{
     padding: 10px;
     margin: 15px;
     background-color: transparent;
-    color: white;
     transition: 0.3s;
     position: fixed;
     bottom: 0;
     right: 0;
+    border-radius: 10px;
+    color: #ef5350;
 }
+
+.dow {
+    border: #64b5f6 solid 1px;
+    font-size: 20px;
+    text-decoration: none;
+    width: fit-content;
+    padding: 10px;
+    margin: 15px;
+    background-color: #28282e;
+    color: white;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
 
 
 .volver:hover {
     border: #ef5350 solid 1px;
-    color: #ef5350;
-    box-shadow: 0 0 30px #ef5350;
     cursor: pointer;
+    color: whitesmoke;
+    background-color: rgb(223,85,84,0.3);
 }
 .card {
     background-color: #28282e;
@@ -66,6 +85,7 @@ code{
     margin: 15px 0;
     color: white;
     transition: 0.3s;
+    border-radius: 8px;
 }
 
 .disp {
@@ -74,10 +94,10 @@ code{
 
 .ver:hover, .verimg:hover {
     letter-spacing: 2px;
-    border: #e57373 solid 1px;
-    color: #e57373;
+    border: #ba68c8 solid 1px;
+    color: #ba68c8;
     width: 8rem;
-    box-shadow: 0 0 20px #e57373;
+    box-shadow: 0 0 20px #ba68c8;
     cursor: pointer;
 }
 
@@ -91,6 +111,7 @@ a.head {
     background-color: transparent;
     color: white;
     transition: 0.3s;
+    border-radius: 10px;
 }
 
 a.head:hover {
@@ -114,8 +135,26 @@ cursor: pointer;
 
 .left-btn {
 left: 5px;
+color: #9da8c6;
+transition: 1s;
 }
 
 .right-btn {
 right: 5px;
+color: #9da8c6;
+transition: 1s;
+}
+
+.right-btn:hover, .left-btn:hover {
+    color: #ba68c8;
+}
+
+
+.lila {
+    color: #ba68c8;
+    display: inline;
+}
+
+img {
+    width:100%;
 }

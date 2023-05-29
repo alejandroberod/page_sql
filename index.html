@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div id="volv"></div>
      <div class="container">
-        <div class="btr2" id="volv">
+        <div class="btr2">
           <div class="buttons">
             <a href="#uno" class="text-center head">Punto 1</a>
             <a href="#dos" class="text-center head">Punto 2</a>
@@ -42,7 +43,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT names, lastname, email FROM `users`;
+                    <p class="lila">SELECT</p> names, lastname, email <p class="lila">FROM</p> `users`;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -60,7 +61,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT departments.name as Departamento, countries.name as Pais FROM `departments` INNER JOIN countries WHERE departments.countries_id = countries.id;
+                    <p class="lila">SELECT</p> departments.name <p class="lila">as</p> Departamento, countries.name <p class="lila">as</p> Pais <p class="lila">FROM</p> `departments` <p class="lila">INNER JOIN</p> countries <p class="lila">WHERE</p> departments.countries_id <p class="lila">=</p> countries.id;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -78,7 +79,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT schools.name as Escuelas, countries.name as Pais FROM `schools` INNER JOIN countries WHERE schools.countries_id = countries.id and countries.name = 'Estados Unidos';
+                    <p class="lila">SELECT</p> schools.name <p class="lila">as</p> Escuelas, countries.name <p class="lila">as</p> Pais <p class="lila">FROM</p> `schools` <p class="lila">INNER JOIN</p> countries <p class="lila">WHERE</p> schools.countries_id <p class="lila">=</p> countries.id and countries.name <p class="lila">=</p> 'Estados Unidos';
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -97,8 +98,12 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                    <p class="lila">SELECT</p> names, lastname, date_birth <p class="lila">FROM</p> `users` <p class="lila">ORDER BY</p> DATEDIFF(<p class="lila">CURRENT_DATE()</p>, STR_TO_DATE(date_birth, '%d-%m-%Y'))/365 <p class="lila">DESC</p>;
                 </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p4.png" alt="">
+                </div>
             </div>
         </div>
         <div class="card">
@@ -111,7 +116,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT departments.name, departments.id, COUNT(departments_id) as numero_de_usuarios FROM  `users` INNER JOIN departments WHERE users.departments_id = departments.id GROUP BY departments_id ORDER BY numero_de_usuarios DESC LIMIT 1;
+                    <p class="lila">SELECT</p> departments.name, departments.id, <p class="lila">COUNT</p>(departments_id) <p class="lila">as</p> numero_de_usuarios <p class="lila">FROM</p>  `users` <p class="lila">INNER JOIN</p> departments <p class="lila">WHERE</p> users.departments_id <p class="lila">=</p> departments.id <p class="lila">GROUP BY</p> departments_id <p class="lila">ORDER BY</p> numero_de_usuarios <p class="lila">DESC LIMIT</p> 1;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -129,7 +134,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT countries.name, countries.id, COUNT(countries_id) as numero_de_usuarios FROM `users` INNER JOIN departments INNER JOIN countries WHERE users.departments_id = departments.id and departments.countries_id 	= countries.id GROUP BY countries_id ORDER BY numero_de_usuarios DESC LIMIT 1;
+                    <p class="lila">SELECT</p> countries.name, countries.id, <p class="lila">COUNT</p>(countries_id) <p class="lila">as</p> numero_de_usuarios <p class="lila">FROM</p> `users` <p class="lila">INNER JOIN</p> departments <p class="lila">INNER JOIN</p> countries <p class="lila">WHERE</p> users.departments_id <p class="lila">=</p> departments.id <p class="lila">and</p> departments.countries_id <p class="lila">=</p> countries.id <p class="lila">GROUP BY</p> countries_id <p class="lila">ORDER BY</p> numero_de_usuarios <p class="lila">DESC LIMIT</p> 1;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -147,7 +152,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT name, id FROM `departments` ORDER BY rand() DESC LIMIT 3;
+                    <p class="lila">SELECT</p> name, id <p class="lila">FROM</p> `departments` <p class="lila">ORDER BY</p> rand() <p class="lila">LIMIT</p> 3;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -169,7 +174,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT users.names, users.lastname, users.email, schools.name as escuela, departments.name as departamento, countries.name as pais FROM `users` INNER JOIN schools INNER JOIN departments INNER JOIN countries WHERE users.school_id = schools.id and users.departments_id = departments.id and departments.countries_id = countries.id ORDER BY rand() LIMIT 1;
+                    <p class="lila">SELECT</p> users.names, users.lastname, users.email, schools.name <p class="lila">as</p> escuela, departments.name <p class="lila">as</p> departamento, countries.name <p class="lila">as</p> pais <p class="lila">FROM</p> `users` <p class="lila">INNER JOIN</p> schools <p class="lila">INNER JOIN</p> departments <p class="lila">INNER JOIN</p> countries <p class="lila">WHERE</p> users.school_id <p class="lila">=</p> schools.id <p class="lila">and</p> users.departments_id <p class="lila">=</p> departments.id <p class="lila">and</p> departments.countries_id <p class="lila">=</p> countries.id <p class="lila">ORDER BY</p> rand() <p class="lila">LIMIT</p> 1;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -187,7 +192,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT names, lastname FROM `users` WHERE names = 'Adriana';
+                    <p class="lila">SELECT</p> names, lastname <p class="lila">FROM</p> `users` <p class="lila">WHERE</p> names <p class="lila">=</p> 'Adriana';
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -204,7 +209,7 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT departments.name, COUNT(departments_id) as numero_usuarios FROM `users` INNER JOIN departments WHERE users.departments_id = departments.id GROUP BY departments_id ORDER BY rand() LIMIT 1;
+                    <p class="lila">SELECT</p> departments.name, <p class="lila">COUNT</p>(departments_id) <p class="lila">as</p> numero_usuarios <p class="lila">FROM</p> `users` <p class="lila">INNER JOIN</p> departments <p class="lila">WHERE</p> users.departments_id <p class="lila">=</p> departments.id <p class="lila">GROUP BY</p> departments_id <p class="lila">ORDER BY</p> rand() <p class="lila">LIMIT</p> 1;
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -223,8 +228,12 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                    <p class="lila">SELECT</p> names, lastname, date_birth <p class="lila">FROM</p> users <p class="lila">WHERE</p> CAST(DATEDIFF(<p class="lila">CURRENT_DATE()</p>, STR_TO_DATE(date_birth, '%d-%m-%Y'))/365 <p class="lila">AS</p> INT) > 20;
                 </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p11.png" alt="">
+                </div>
             </div>
         </div>
         <div class="card">
@@ -238,8 +247,12 @@
                 </ul>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                    <p class="lila">SELECT</p> names, lastname <p class="lila">FROM</p> `users` <p class="lila">WHERE</p> CAST(DATEDIFF(<p class="lila">CURRENT_DATE()</p>, STR_TO_DATE(date_birth, '%d-%m-%Y'))/365 <p class="lila">AS</p> INT) <p class="lila">BETWEEN</p> 20 <p class="lila">and</p> 60;
                 </code>
+                <div class="verimg">Ver imagen</div>
+                <div class="img disp">
+                    <img src="imgs/p12.png" alt="">
+                </div>
             </div>
         </div>
         <div class="card">
@@ -248,7 +261,7 @@
                 <p>Listado de colegios que tengan el numero “7” en su número de teléfono</p>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT * FROM `schools` WHERE phone LIKE '%7%';
+                    <p class="lila">SELECT *</p> <p class="lila">FROM</p> `schools` <p class="lila">WHERE</p> phone <p class="lila">LIKE</p> '%7%';
                 </code>
                 <div class="verimg">Ver imagen</div>
                 <div class="img disp">
@@ -262,7 +275,7 @@
                 <p>Listado de usuarios que no estén asociados a ningún departamento</p>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                  En proceso...  
                 </code>
             </div>
         </div>
@@ -272,12 +285,13 @@
                 <p>Listado de usuarios que no estén asociados a ningún colegio.</p>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    SELECT users.names, users.lastnames, countries.name as country FROM users INNER JOIN countries WHERE users.country_id = countries.id;
+                    En proceso...
                 </code>
             </div>
         </div>
       </div>
       <a href="#volv" class="volver">Volver</a>
+      <a href="actividad_sql.sql" target="_blank" download="User.sql" class="dow">Descargar base de datos</a>
       <script src="JS/app.js"></script>
     </body>
 </html>
