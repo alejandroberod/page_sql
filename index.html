@@ -275,7 +275,7 @@
                 <p>Listado de usuarios que no estén asociados a ningún departamento</p>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                  En proceso...  
+                  <p class="lila">SELECT *</p> <p class="lila">FROM</p> `users` LEFT JOIN departments ON departments.id = users.departments_id <p class="lila">WHERE</p> users.departments_id IS NULL;
                 </code>
             </div>
         </div>
@@ -285,7 +285,7 @@
                 <p>Listado de usuarios que no estén asociados a ningún colegio.</p>
                 <div class="ver">Ver código</div>
                 <code class="disp">
-                    En proceso...
+                    <p class="lila">SELECT *</p> <p class="lila">FROM</p> `users` LEFT JOIN schools ON school.id = users.schools_id <p class="lila">WHERE</p> users.schools_id IS NULL;
                 </code>
             </div>
         </div>
